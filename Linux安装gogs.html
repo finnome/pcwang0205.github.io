@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）
+sudo apt-get install mysql-server 
+设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)
+mysql    
+set password for root@localhost = password(‘你的密码’);  
+
+
+用MySQL创建gogs数据库 crea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI">
+<meta property="og:url" content="http://yoursite.com/Linux安装gogs.html">
+<meta property="og:site_name" content="AI">
+<meta property="og:description" content="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）
+sudo apt-get install mysql-server 
+设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)
+mysql    
+set password for root@localhost = password(‘你的密码’);  
+
+
+用MySQL创建gogs数据库 crea">
+<meta property="og:image" content="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png">
+<meta property="og:updated_time" content="2016-04-01T09:09:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI">
+<meta name="twitter:description" content="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）
+sudo apt-get install mysql-server 
+设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)
+mysql    
+set password for root@localhost = password(‘你的密码’);  
+
+
+用MySQL创建gogs数据库 crea">
+<meta name="twitter:image" content="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png">
+  
+    <link rel="alternate" href="/atom.xml" title="AI" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AI</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Linux安装gogs.html" class="article-date">
+  <time datetime="2016-04-01T09:09:41.000Z" itemprop="datePublished">2016-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"><a href="#安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）" class="headerlink" title="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"></a>安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）</h2><ol>
+<li>sudo apt-get install mysql-server </li>
+<li>设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)<ul>
+<li>mysql    </li>
+<li>set password for root@localhost = password(‘你的密码’);  </li>
+</ul>
+</li>
+<li>用MySQL创建gogs数据库<br> create database gogs character set utf8 collate utf8_bin;</li>
+</ol>
+<h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><ol>
+<li>sudo apt-get update (先update一下，不然第二步有可能找不到git)</li>
+<li>sudo apt-get install git</li>
+</ol>
+<h2 id="下载安装Gogs"><a href="#下载安装Gogs" class="headerlink" title="下载安装Gogs"></a>下载安装Gogs</h2><ol>
+<li>wget <a href="https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）" target="_blank" rel="external">https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）</a> </li>
+<li>unzip xxxx.zip（刚下载的gogs安装包）</li>
+<li>创建自定义配置文件<ul>
+<li>cd gogs</li>
+<li>mkdir -p custom/conf (配置文件)</li>
+<li>sudo chmod -R 777 custom (修改custom目录权限)</li>
+<li>mkdir log (创建日志目录)</li>
+<li>sudo chmod -R 777 log (修改log文件夹权限)</li>
+</ul>
+</li>
+<li>配置安装好的gogs目录如下<br><img src="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png" alt="图片标题"></li>
+<li>可以看到有gogs目录下有一个gogs文件</li>
+<li>运行gogs方式（在gogs目录下）<ul>
+<li>./gogs web</li>
+<li>nohup ./gogs web &amp; (后台运行)</li>
+</ul>
+</li>
+<li>杀死后台gogs进程<ul>
+<li>ps -ef | grep gogs (找到对应的gogs进程id)</li>
+<li>kill xxx(进程id)</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/Linux安装gogs.html" data-id="cimhi8eno0000vvkvytjtjztf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/01/Linux安装gogs/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 pcwang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
