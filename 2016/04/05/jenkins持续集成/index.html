@@ -1,0 +1,528 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="pcwang">
+    
+
+    
+    <meta name="description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI">
+<meta property="og:url" content="http://yoursite.com/2016/04/05/jenkins持续集成/index.html">
+<meta property="og:site_name" content="AI">
+<meta property="og:description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/scheme.jpg">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/profile_name.jpg">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/Image%202016-04-01%20at%2012.26.30%20上午.png">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/B073BC29-3244-49C7-9F57-BD1B87D941B8.png">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/4580C02E-E424-427F-A53F-32E030D5D309.png">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/936296CA-505A-4D70-ADC5-48515210767C.png">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/C5ED3DF3-5DEE-4849-BDE3-28F0E9764ACA.png">
+<meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/7D4C47AA-2A7A-4932-B1A5-BDB1EE5D0950.png">
+<meta property="og:updated_time" content="2016-04-05T02:19:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI">
+<meta name="twitter:description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
+<meta name="twitter:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/scheme.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="AI" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpeg" alt="AI" title="AI"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="AI">AI</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/05/jenkins持续集成/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-05T02:19:56.000Z" itemprop="datePublished"> 發表於 2016-04-05</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><span class="toc-number">1.</span> <span class="toc-text">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">1.3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建项目</span></a></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><a href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成" class="headerlink" title="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"></a>Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</h1><h2 id="Xcodebuild"><a href="#Xcodebuild" class="headerlink" title="Xcodebuild"></a>Xcodebuild</h2><p>在Xcode中，如果要打包成ipa包，是通过[Product -&gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经常闪退。</p>
+<p>通过xcodebuild可以完成iOS工程的编译，打包和签名的过程。Archive后，工程是没有进行签名的。export时候才会去签名，签名必须依赖于工程的配置。</p>
+<h3 id="命令打包流程"><a href="#命令打包流程" class="headerlink" title="命令打包流程"></a>命令打包流程</h3><ol>
+<li><p>.xcodeproj工程</p>
+<ul>
+<li>生成.xcarchive文件<br>xcodebuild -scheme <schemename> -archivePath build/<schemename>.xcarchive archive</schemename></schemename></li>
+<li>将.xcarchive签名打包生成ipa<br>xcodebuild  -exportArchive -exportFormat IPA -archivePath <archivepath> -exportPath <exportpath> -exportProvisioningProfile <profile_name></profile_name></exportpath></archivepath></li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>.xcworkspace工程（Pods）<ul>
+<li>xcodebuild -workspace xxx.xcworkspace -scheme <schemename> -archivePath xxx.xcarchive archive</schemename></li>
+<li>xcodebuild -exportArchive -exportFormat IPA -archivePath <archivepath> -exportPath <exportpath> -exportProvisioningProfile <profile_name></profile_name></exportpath></archivepath></li>
+</ul>
+</li>
+</ol>
+<p>例子：    </p>
+<ul>
+<li>xcodebuild -workspace Snacks.xcworkspace -scheme Snacks-CI -archivePath build/Snacks-CI.xcarchive archive</li>
+<li>xcodebuild -exportArchive -exportFormat IPA -archivePath Snacks-CI.xcarchive -exportPath Snacks.ipa -exportProvisioningProfile Snacks-InHouse</li>
+</ul>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>图片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>workspace</td>
+<td>.workspace的名称</td>
+<td></td>
+</tr>
+<tr>
+<td>scheme</td>
+<td>工程名</td>
+<td><img src="http://7xsm7t.com2.z0.glb.clouddn.com/scheme.jpg" alt=""></td>
+</tr>
+<tr>
+<td>archivePath</td>
+<td>archive生成的文件路径</td>
+<td></td>
+</tr>
+<tr>
+<td>exportArchive</td>
+<td>导出Archive</td>
+<td></td>
+</tr>
+<tr>
+<td>exportFormat</td>
+<td>导出格式</td>
+<td></td>
+</tr>
+<tr>
+<td>exportPath</td>
+<td>导出文件路径</td>
+<td></td>
+</tr>
+<tr>
+<td>exportProvisioningProfile</td>
+<td>Profile_Name</td>
+<td><img src="http://7xsm7t.com2.z0.glb.clouddn.com/profile_name.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><ol>
+<li>brew install jenkins</li>
+<li>启动jenkins命令： java -jar /usr/local/Cellar/jenkins/1.620/libexec/jenkins.war</li>
+<li><p>配置局域网可访问：      </p>
+<pre><code>ln -sfv /usr/local/opt/jenkins/*.plist ~
+/Library/LaunchAgents   
+open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
+需要把–httpListenAddress=127.0.0.1
+</code></pre></li>
+</ol>
+<h2 id="构建iOS-CI流程"><a href="#构建iOS-CI流程" class="headerlink" title="构建iOS-CI流程"></a>构建iOS-CI流程</h2><h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>输入项目名字，选择构建一个自由风格的软件项目。<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/Image%202016-04-01%20at%2012.26.30%20上午.png" alt=""></p>
+<ol>
+<li>选择参数化构建过程，输入需要配置的一些信息。<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/B073BC29-3244-49C7-9F57-BD1B87D941B8.png" alt=""></li>
+<li>配置项目Git地址<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/4580C02E-E424-427F-A53F-32E030D5D309.png" alt=""></li>
+<li>build参数配置<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/936296CA-505A-4D70-ADC5-48515210767C.png" alt=""></li>
+<li>证书和keychain配置<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/C5ED3DF3-5DEE-4849-BDE3-28F0E9764ACA.png" alt=""></li>
+<li>构建完上传到fir、蒲公英<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/7D4C47AA-2A7A-4932-B1A5-BDB1EE5D0950.png" alt=""></li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/04/05/jenkins持续集成/" data-title="AI" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/01/Linux安装gogs/"  title="">
+ <strong>下一篇：</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><span class="toc-number">1.</span> <span class="toc-text">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">1.3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建项目</span></a></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="pcwang">pcwang</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
