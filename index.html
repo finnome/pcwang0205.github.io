@@ -174,6 +174,102 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/04/05/Linux安装gogs/" title="Linux安装Gogs" itemprop="url">Linux安装Gogs</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-05T07:08:54.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"><a href="#安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）" class="headerlink" title="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"></a>安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）</h2><ol>
+<li>sudo apt-get install mysql-server </li>
+<li>设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)<ul>
+<li>mysql    </li>
+<li>set password for root@localhost = password(‘你的密码’);  </li>
+</ul>
+</li>
+<li>用MySQL创建gogs数据库<br> create database gogs character set utf8 collate utf8_bin;</li>
+</ol>
+<h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><ol>
+<li>sudo apt-get update (先update一下，不然第二步有可能找不到git)</li>
+<li>sudo apt-get install git</li>
+</ol>
+<h2 id="下载安装Gogs"><a href="#下载安装Gogs" class="headerlink" title="下载安装Gogs"></a>下载安装Gogs</h2><ol>
+<li>wget <a href="https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）" target="_blank" rel="external">https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）</a> </li>
+<li>unzip xxxx.zip（刚下载的gogs安装包）</li>
+<li>创建自定义配置文件<ul>
+<li>cd gogs</li>
+<li>mkdir -p custom/conf (配置文件)</li>
+<li>sudo chmod -R 777 custom (修改custom目录权限)</li>
+<li>mkdir log (创建日志目录)</li>
+<li>sudo chmod -R 777 log (修改log文件夹权限)</li>
+</ul>
+</li>
+<li>配置安装好的gogs目录如下<br><img src="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png" alt="图片标题"></li>
+<li>可以看到有gogs目录下有一个gogs文件</li>
+<li>运行gogs方式（在gogs目录下）<ul>
+<li>./gogs web</li>
+<li>nohup ./gogs web &amp; (后台运行)</li>
+</ul>
+</li>
+<li>杀死后台gogs进程<ul>
+<li>ps -ef | grep gogs (找到对应的gogs进程id)</li>
+<li>kill xxx(进程id)</li>
+</ul>
+</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Gogs/">Gogs</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Gogs/">Gogs</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/04/05/jenkins持续集成/" title="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成" itemprop="url">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</a>
   </h1>
   <p class="article-author">By
@@ -317,102 +413,6 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/05/Linux安装gogs/" title="Linux安装Gogs" itemprop="url">Linux安装Gogs</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-05T07:08:54.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"><a href="#安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）" class="headerlink" title="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"></a>安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）</h2><ol>
-<li>sudo apt-get install mysql-server </li>
-<li>设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)<ul>
-<li>mysql    </li>
-<li>set password for root@localhost = password(‘你的密码’);  </li>
-</ul>
-</li>
-<li>用MySQL创建gogs数据库<br> create database gogs character set utf8 collate utf8_bin;</li>
-</ol>
-<h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><ol>
-<li>sudo apt-get update (先update一下，不然第二步有可能找不到git)</li>
-<li>sudo apt-get install git</li>
-</ol>
-<h2 id="下载安装Gogs"><a href="#下载安装Gogs" class="headerlink" title="下载安装Gogs"></a>下载安装Gogs</h2><ol>
-<li>wget <a href="https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）" target="_blank" rel="external">https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）</a> </li>
-<li>unzip xxxx.zip（刚下载的gogs安装包）</li>
-<li>创建自定义配置文件<ul>
-<li>cd gogs</li>
-<li>mkdir -p custom/conf (配置文件)</li>
-<li>sudo chmod -R 777 custom (修改custom目录权限)</li>
-<li>mkdir log (创建日志目录)</li>
-<li>sudo chmod -R 777 log (修改log文件夹权限)</li>
-</ul>
-</li>
-<li>配置安装好的gogs目录如下<br><img src="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png" alt="图片标题"></li>
-<li>可以看到有gogs目录下有一个gogs文件</li>
-<li>运行gogs方式（在gogs目录下）<ul>
-<li>./gogs web</li>
-<li>nohup ./gogs web &amp; (后台运行)</li>
-</ul>
-</li>
-<li>杀死后台gogs进程<ul>
-<li>ps -ef | grep gogs (找到对应的gogs进程id)</li>
-<li>kill xxx(进程id)</li>
-</ul>
-</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Gogs/">Gogs</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Gogs/">Gogs</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -451,15 +451,15 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Jenkins/" title="Jenkins">Jenkins<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Gogs/" title="Gogs">Gogs<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Cocoapods/" title="Cocoapods">Cocoapods<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jenkins/" title="Jenkins">Jenkins<sup>1</sup></a></li>
 			
 		
 		</ul>
