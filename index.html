@@ -47,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="AI">AI</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -63,7 +63,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -88,7 +88,7 @@
 		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T02:19:56.000Z" itemprop="datePublished"> 發表於 2016-04-05</time>
+    <time datetime="2016-04-05T02:19:56.000Z" itemprop="datePublished"> Published 2016-04-05</time>
     
   </p>
 </header>
@@ -173,13 +173,17 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 </code></pre></li>
 </ol>
 <h2 id="构建iOS-CI流程"><a href="#构建iOS-CI流程" class="headerlink" title="构建iOS-CI流程"></a>构建iOS-CI流程</h2><h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>输入项目名字，选择构建一个自由风格的软件项目。<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/Image%202016-04-01%20at%2012.26.30%20上午.png" alt=""></p>
-<ol>
-<li>选择参数化构建过程，输入需要配置的一些信息。<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/B073BC29-3244-49C7-9F57-BD1B87D941B8.png" alt=""></li>
-<li>配置项目Git地址<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/4580C02E-E424-427F-A53F-32E030D5D309.png" alt=""></li>
-<li>build参数配置<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/936296CA-505A-4D70-ADC5-48515210767C.png" alt=""></li>
-<li>证书和keychain配置<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/C5ED3DF3-5DEE-4849-BDE3-28F0E9764ACA.png" alt=""></li>
-<li>构建完上传到fir、蒲公英<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/7D4C47AA-2A7A-4932-B1A5-BDB1EE5D0950.png" alt=""></li>
-</ol>
+<h3 id="配置工程基本信息"><a href="#配置工程基本信息" class="headerlink" title="配置工程基本信息"></a>配置工程基本信息</h3><p>选择参数化构建过程，输入需要配置的一些信息。<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/B073BC29-3244-49C7-9F57-BD1B87D941B8.png" alt=""></p>
+<h3 id="配置项目源码Git地址"><a href="#配置项目源码Git地址" class="headerlink" title="配置项目源码Git地址"></a>配置项目源码Git地址</h3><p><img src="http://7xsm7t.com2.z0.glb.clouddn.com/4580C02E-E424-427F-A53F-32E030D5D309.png" alt=""></p>
+<h3 id="配置Cocoapods"><a href="#配置Cocoapods" class="headerlink" title="配置Cocoapods"></a>配置Cocoapods</h3><p>cd到.xcworkspace目录，执行pod install –no-repo-update。<br>一般都需要配置改信息的（由于DouDouBus工程本身的问题，所以没有配置。但是采用Cocoapods来管理项目的童鞋都得配置一下）<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/695083B5-CD00-41E6-8549-F3B2448FBD1D.png" alt=""></p>
+<h3 id="build参数配置"><a href="#build参数配置" class="headerlink" title="build参数配置"></a>build参数配置</h3><p><img src="http://7xsm7t.com2.z0.glb.clouddn.com/936296CA-505A-4D70-ADC5-48515210767C.png" alt=""></p>
+<h3 id="证书和keychain配置"><a href="#证书和keychain配置" class="headerlink" title="证书和keychain配置"></a>证书和keychain配置</h3><p><img src="http://7xsm7t.com2.z0.glb.clouddn.com/C5ED3DF3-5DEE-4849-BDE3-28F0E9764ACA.png" alt=""></p>
+<h3 id="Xcode构建高级配置"><a href="#Xcode构建高级配置" class="headerlink" title="Xcode构建高级配置"></a>Xcode构建高级配置</h3><p><img src="http://7xsm7t.com2.z0.glb.clouddn.com/46E401A1-C784-48BA-9228-91DCAFFAFB8D.png" alt=""></p>
+<h3 id="构建完上传到fir、蒲公英"><a href="#构建完上传到fir、蒲公英" class="headerlink" title="构建完上传到fir、蒲公英"></a>构建完上传到fir、蒲公英</h3><p><img src="http://7xsm7t.com2.z0.glb.clouddn.com/7D4C47AA-2A7A-4932-B1A5-BDB1EE5D0950.png" alt=""></p>
+<h4 id="fir通过fir-cli来发布"><a href="#fir通过fir-cli来发布" class="headerlink" title="fir通过fir-cli来发布"></a>fir通过fir-cli来发布</h4><p><a href="https://github.com/FIRHQ/fir-cli" target="_blank" rel="external">fir-cli</a></p>
+<h4 id="蒲公英通过curl命令上传ipa文件"><a href="#蒲公英通过curl命令上传ipa文件" class="headerlink" title="蒲公英通过curl命令上传ipa文件"></a>蒲公英通过curl命令上传ipa文件</h4><p><a href="https://www.pgyer.com/doc/api#uploadApp" target="_blank" rel="external">curl</a></p>
+<h3 id="构建后步骤"><a href="#构建后步骤" class="headerlink" title="构建后步骤"></a>构建后步骤</h3><p>可添加项目构建完后的操作，如邮件通知相关的人员<br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/94C969EC-47CB-46B7-8C20-A8C4E74462C9.png" alt=""><br><img src="http://7xsm7t.com2.z0.glb.clouddn.com/C13D01ED-FBAD-4B62-8D42-92741D2B200B.png" alt=""></p>
+<h3 id="开始构建项目"><a href="#开始构建项目" class="headerlink" title="开始构建项目"></a>开始构建项目</h3><p><img src="http://7xsm7t.com2.z0.glb.clouddn.com/B91714B4-09B0-4B47-85EF-A4E0F96EA35E.png" alt=""></p>
 
         
         
@@ -223,7 +227,7 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-01T09:09:30.000Z" itemprop="datePublished"> 發表於 2016-04-01</time>
+    <time datetime="2016-04-01T09:09:30.000Z" itemprop="datePublished"> Published 2016-04-01</time>
     
   </p>
 </header>
@@ -298,10 +302,10 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -312,7 +316,7 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
   
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -334,11 +338,11 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -488,7 +492,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
