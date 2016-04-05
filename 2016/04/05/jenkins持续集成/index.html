@@ -1,6 +1,6 @@
 
  <!DOCTYPE HTML>
-<html >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
@@ -14,7 +14,7 @@
     <meta name="description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI">
-<meta property="og:url" content="http://yoursite.com/2016/04/05/jenkins持续集成/index.html">
+<meta property="og:url" content="http://pcwangblog.com/2016/04/05/jenkins持续集成/index.html">
 <meta property="og:site_name" content="AI">
 <meta property="og:description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/scheme.jpg">
@@ -62,7 +62,7 @@
 				<h1 class="site-name"><a href="/" title="AI">AI</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -78,8 +78,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:pcwangblog.com">
 					</form>
 					
 					</li>
@@ -101,14 +101,14 @@
 		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T02:19:56.000Z" itemprop="datePublished"> Published 2016-04-05</time>
+    <time datetime="2016-04-05T02:19:56.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><span class="toc-number">1.</span> <span class="toc-text">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">1.3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置工程基本信息"><span class="toc-number">1.3.2.</span> <span class="toc-text">配置工程基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置项目源码Git地址"><span class="toc-number">1.3.3.</span> <span class="toc-text">配置项目源码Git地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Cocoapods"><span class="toc-number">1.3.4.</span> <span class="toc-text">配置Cocoapods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build参数配置"><span class="toc-number">1.3.5.</span> <span class="toc-text">build参数配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书和keychain配置"><span class="toc-number">1.3.6.</span> <span class="toc-text">证书和keychain配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode构建高级配置"><span class="toc-number">1.3.7.</span> <span class="toc-text">Xcode构建高级配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建完上传到fir、蒲公英"><span class="toc-number">1.3.8.</span> <span class="toc-text">构建完上传到fir、蒲公英</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fir通过fir-cli来发布"><span class="toc-number">1.3.8.1.</span> <span class="toc-text">fir通过fir-cli来发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蒲公英通过curl命令上传ipa文件"><span class="toc-number">1.3.8.2.</span> <span class="toc-text">蒲公英通过curl命令上传ipa文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建后步骤"><span class="toc-number">1.3.9.</span> <span class="toc-text">构建后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始构建项目"><span class="toc-number">1.3.10.</span> <span class="toc-text">开始构建项目</span></a></li></ol></li></ol></li></ol>
 		
@@ -216,7 +216,7 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/05/jenkins持续集成/" data-title="AI" data-tsina="null" class="share clearfix">
+	  <div data-url="http://pcwangblog.com/2016/04/05/jenkins持续集成/" data-title="AI" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -243,17 +243,17 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 	
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><span class="toc-number">1.</span> <span class="toc-text">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">1.3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置工程基本信息"><span class="toc-number">1.3.2.</span> <span class="toc-text">配置工程基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置项目源码Git地址"><span class="toc-number">1.3.3.</span> <span class="toc-text">配置项目源码Git地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Cocoapods"><span class="toc-number">1.3.4.</span> <span class="toc-text">配置Cocoapods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build参数配置"><span class="toc-number">1.3.5.</span> <span class="toc-text">build参数配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书和keychain配置"><span class="toc-number">1.3.6.</span> <span class="toc-text">证书和keychain配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode构建高级配置"><span class="toc-number">1.3.7.</span> <span class="toc-text">Xcode构建高级配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建完上传到fir、蒲公英"><span class="toc-number">1.3.8.</span> <span class="toc-text">构建完上传到fir、蒲公英</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fir通过fir-cli来发布"><span class="toc-number">1.3.8.1.</span> <span class="toc-text">fir通过fir-cli来发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蒲公英通过curl命令上传ipa文件"><span class="toc-number">1.3.8.2.</span> <span class="toc-text">蒲公英通过curl命令上传ipa文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建后步骤"><span class="toc-number">1.3.9.</span> <span class="toc-text">构建后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始构建项目"><span class="toc-number">1.3.10.</span> <span class="toc-text">开始构建项目</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
@@ -263,36 +263,7 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
   
 
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
-        
-          <li>
-            
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
   
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
-</div>
 
 
 </aside>
@@ -307,8 +278,8 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
+		<p> Hello World <br/>
+			</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -517,7 +488,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
