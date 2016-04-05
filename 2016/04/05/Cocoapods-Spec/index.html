@@ -1,27 +1,32 @@
 
-  
-    <!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>AI</title>
+    <title>Cocoapods/Spec使用教程 | AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="pcwang">
     
 
     
-    <meta name="description" content="Cocoapods/SpecCocoapodsCocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AI">
-<meta property="og:url" content="http://pcwangblog.com/category/cocoapods:spec.html">
+    <meta name="description" content="CocoapodsCocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这个文件。
+安装和使用
+gem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocoapods/Spec使用教程">
+<meta property="og:url" content="http://pcwangblog.com/2016/04/05/Cocoapods-Spec/index.html">
 <meta property="og:site_name" content="AI">
-<meta property="og:description" content="Cocoapods/SpecCocoapodsCocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这">
-<meta property="og:updated_time" content="2016-04-05T06:44:08.000Z">
+<meta property="og:description" content="CocoapodsCocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这个文件。
+安装和使用
+gem">
+<meta property="og:updated_time" content="2016-04-05T08:12:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AI">
-<meta name="twitter:description" content="Cocoapods/SpecCocoapodsCocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这">
+<meta name="twitter:title" content="Cocoapods/Spec使用教程">
+<meta name="twitter:description" content="CocoapodsCocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这个文件。
+安装和使用
+gem">
 
     
     <link rel="alternative" href="/atom.xml" title="AI" type="application/atom+xml">
@@ -36,9 +41,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-      <body>
-        <header>
-          
+  <body>
+    <header>
+      
 <div>
 		
 			<div id="imglogo">
@@ -73,28 +78,35 @@
 				</ul>
 			</nav>			
 </div>
-        </header>
-        <div id="container">
-          <div id="main" class="page" itemscope itemprop="blogPost">
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/category/cocoapods:spec.html" title="" itemprop="url"></a>
+      <a href="/2016/04/05/Cocoapods-Spec/" title="Cocoapods/Spec使用教程" itemprop="url">Cocoapods/Spec使用教程</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T06:44:08.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
+    <time datetime="2016-04-05T07:30:38.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h1 id="Cocoapods-Spec"><a href="#Cocoapods-Spec" class="headerlink" title="Cocoapods/Spec"></a>Cocoapods/Spec</h1><h2 id="Cocoapods"><a href="#Cocoapods" class="headerlink" title="Cocoapods"></a>Cocoapods</h2><p>Cocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这个文件。</p>
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods"><span class="toc-number">1.</span> <span class="toc-text">Cocoapods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和使用"><span class="toc-number">1.1.</span> <span class="toc-text">安装和使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Podfile-lock"><span class="toc-number">2.</span> <span class="toc-text">Podfile.lock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Podfile书写"><span class="toc-number">3.</span> <span class="toc-text">Podfile书写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spec-Repo"><span class="toc-number">4.</span> <span class="toc-text">Spec Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料："><span class="toc-number">5.</span> <span class="toc-text">学习资料：</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="Cocoapods"><a href="#Cocoapods" class="headerlink" title="Cocoapods"></a>Cocoapods</h2><p>Cocoapods是非常好用的一个iOS依赖管理工具，使用它可以方便的管理和更新项目中所使用到的第三方库，以及将自己的项目中的公共组件交由它去管理。它的原理是将所有的依赖库都放到另一个名为 Pods 项目中，然后让主项目依赖 Pods 项目，这样，源码管理工作都从主项目移到了 Pods 项目中，Pods项目最终编译成libPods.a文件，主项目依赖这个文件。</p>
 <h3 id="安装和使用"><a href="#安装和使用" class="headerlink" title="安装和使用"></a>安装和使用</h3><ol>
 <li>gem source 查看软件源</li>
 <li>sudo gem source –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a> 移除软件源 </li>
@@ -105,7 +117,7 @@
 <p>其他常用命令： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo gem uninstall cocoapods --version(卸载cocoapods)</span><br><span class="line">pod install (下载podfile依赖的库，并更新~/.cocoapods信息（Spec仓库）)</span><br><span class="line">pod install --no-repo-update（不更新~/.cocoapods信息(Spec仓库)）</span><br><span class="line">pod update (xxx) --no-repo-update (将文件中的第三方库更新到最新版本,(依赖Podfile文件的配置))</span><br></pre></td></tr></table></figure>
 <h2 id="Podfile-lock"><a href="#Podfile-lock" class="headerlink" title="Podfile.lock"></a>Podfile.lock</h2><p>Podfile.lock中会标注项目当前依赖库的准确版本, pod install，只会安装 Podfile 中新改变的东西，并且会：优先遵循 Podfile 里指定的版本信息；其次遵循 Podfile.lock 里指定的版本信息来安装对应的依赖库。</p>
-<p>Podfile.lock文件最大得用处在于多人开发。当团队中的某个人执行完pod install命令后，生成的Podfile.lock文件就记录下了当时最新Pods依赖库的版本，这时团队中的其它人check下来这份包含Podfile.lock文件的工程以后，再去执行pod install命令时，获取下来的Pods依赖库的版本就和最开始用户获取到的版本一致。如果没有Podfile.lock文件，后续所有用户执行pod install命令都会获取最新版本，这就有可能造成同一个团队使用的依赖库版本不一致，这对团队协作来说绝对是个灾难！</p>
+<p>Podfile.lock文件最大得用处在于多人开发。当团队中的某个人执行完pod install命令后，生成的Podfile.lock文件就记录下了当时最新Pods依赖库的版本，这时团队中的其它人check下来这份包含Podfile.lock文件的工程以后，再去执行pod install命令时，获取下来的Pods依赖库的版本就和最开始用户获取到的版本一致。如果没有Podfile.lock文件，后续所有用户执行pod install命令都会获取最新版本的Masonry，这就有可能造成同一个团队使用的依赖库版本不一致，这对团队协作来说绝对是个灾难！</p>
 <h2 id="Podfile书写"><a href="#Podfile书写" class="headerlink" title="Podfile书写"></a>Podfile书写</h2><p>以下是Podfile的一个例子</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># platform :ios, &apos;7.0&apos; //编译版本</span><br><span class="line"># Uncomment this line if you&apos;re using Swift</span><br><span class="line"># use_frameworks!</span><br><span class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos;  //指定镜像仓库的源</span><br><span class="line"></span><br><span class="line">target &apos;OcDemo&apos; do</span><br><span class="line"></span><br><span class="line">pod &apos;ReactiveCocoa&apos;, &apos;2.4.2&apos;				//使用2.4.2版本</span><br><span class="line">pod &apos;ReactiveViewModel&apos;, &apos;&gt; 0.3&apos;			//使用任何大于0.3的版本</span><br><span class="line">pod &apos;JSONModel&apos;, &apos;&gt;= 1.0.1&apos;</span><br><span class="line">pod &apos;AFNetworking&apos;, &apos;&lt; 2.5.0&apos;</span><br><span class="line">pod &apos;AFNetworking-RACExtensions&apos;, &apos;&lt;= 0.1.6&apos;</span><br><span class="line">pod &apos;Masonry&apos;, &apos;~&gt; 0.5.3&apos;					//任何大于等于0.5.3且小于0.6的版本（默认会下载最接近0.6的版本）</span><br><span class="line">pod &apos;SDWebImage&apos;, &apos;~&gt; 3.7.1&apos;</span><br><span class="line">pod &apos;MJRefresh&apos;, &apos;~&gt; 2.4.12&apos;</span><br><span class="line">pod &apos;pop&apos;, &apos;~&gt; 1.0.7&apos;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">#测试用</span><br><span class="line">target &apos;OcDemoTests&apos; do</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 <h2 id="Spec-Repo"><a href="#Spec-Repo" class="headerlink" title="Spec Repo"></a>Spec Repo</h2><p>它是所有的Pods的一个索引，就是一个容器，所有公开的Pods都在里面</p>
@@ -123,10 +135,6 @@
 <li>pod repo push SSpecs SFramework.podspec     //push到SSpecs仓库内（本地和远程）</li>
 <li>维护podspec</li>
 </ol>
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><ol>
-<li>pod repo update master（pod install也会默认更新， 进入相应目录git pull也可以）        //更新本地spec描述文件</li>
-<li></li>
-</ol>
 <h2 id="学习资料："><a href="#学习资料：" class="headerlink" title="学习资料："></a>学习资料：</h2><p>以下学习资料包含具体的参数介绍，还有pod的一些其他用法，如使用子库、指定分支、指定tag等</p>
 <ol>
 <li><a href="http://www.tuicool.com/articles/iYnuum6" target="_blank" rel="external">http://www.tuicool.com/articles/iYnuum6</a></li>
@@ -137,6 +145,16 @@
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Cocoapods/">Cocoapods</a>
+  </div>
 
 </div>
 
@@ -144,7 +162,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://pcwangblog.com/category/cocoapods:spec.html" data-title="AI" data-tsina="null" class="share clearfix">
+	  <div data-url="http://pcwangblog.com/2016/04/05/Cocoapods-Spec/" data-title="Cocoapods/Spec使用教程 | AI" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -155,11 +173,87 @@
    	       
 	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/05/jenkins持续集成/"  title="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成">
+ <strong>下一篇：</strong><br/> 
+ <span>Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成
+</span>
+</a>
+</div>
+
+</nav>
+
 	
 
 </div>  
-        </div>
-        <footer><div id="footer" >
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods"><span class="toc-number">1.</span> <span class="toc-text">Cocoapods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和使用"><span class="toc-number">1.1.</span> <span class="toc-text">安装和使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Podfile-lock"><span class="toc-number">2.</span> <span class="toc-text">Podfile.lock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Podfile书写"><span class="toc-number">3.</span> <span class="toc-text">Podfile书写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spec-Repo"><span class="toc-number">4.</span> <span class="toc-text">Spec Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料："><span class="toc-number">5.</span> <span class="toc-text">学习资料：</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Gogs/" title="Gogs">Gogs<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Jenkins/" title="Jenkins">Jenkins<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Jenkins/" title="Jenkins">Jenkins<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Gogs/" title="Gogs">Gogs<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Cocoapods/" title="Cocoapods">Cocoapods<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -198,7 +292,7 @@
 		</p>
 </div>
 </footer>
-        <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 <script src="/js/jquery.qrcode-0.12.0.min.js"></script>
@@ -242,8 +336,36 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
@@ -366,6 +488,5 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search End -->
 
-      </body>
-     </html>
-     
+  </body>
+</html>

@@ -1,5 +1,6 @@
 
- <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -11,39 +12,16 @@
     
 
     
-    <meta name="description" content="Linux安装Gogs安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）
-sudo apt-get install mysql-server 
-设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)
-mysql    
-set password for root@localhost = password(‘你的密码’);  
-
-
-用MySQL创建g">
-<meta property="og:type" content="article">
+    <meta name="description" content="layout: categories(tags)title: categories(tags)">
+<meta property="og:type" content="website">
 <meta property="og:title" content="AI">
-<meta property="og:url" content="http://pcwangblog.com/2016/04/01/Linux安装gogs/index.html">
+<meta property="og:url" content="http://pcwangblog.com/tags/index.html">
 <meta property="og:site_name" content="AI">
-<meta property="og:description" content="Linux安装Gogs安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）
-sudo apt-get install mysql-server 
-设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)
-mysql    
-set password for root@localhost = password(‘你的密码’);  
-
-
-用MySQL创建g">
-<meta property="og:image" content="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png">
-<meta property="og:updated_time" content="2016-04-01T09:09:30.000Z">
+<meta property="og:description" content="layout: categories(tags)title: categories(tags)">
+<meta property="og:updated_time" content="2016-04-05T07:06:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AI">
-<meta name="twitter:description" content="Linux安装Gogs安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）
-sudo apt-get install mysql-server 
-设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)
-mysql    
-set password for root@localhost = password(‘你的密码’);  
-
-
-用MySQL创建g">
-<meta name="twitter:image" content="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png">
+<meta name="twitter:description" content="layout: categories(tags)title: categories(tags)">
 
     
     <link rel="alternative" href="/atom.xml" title="AI" type="application/atom+xml">
@@ -58,9 +36,9 @@ set password for root@localhost = password(‘你的密码’);
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      
+      <body>
+        <header>
+          
 <div>
 		
 			<div id="imglogo">
@@ -95,71 +73,28 @@ set password for root@localhost = password(‘你的密码’);
 				</ul>
 			</nav>			
 </div>
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/01/Linux安装gogs/" title="" itemprop="url"></a>
+      <a href="/tags/index.html" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-01T09:09:30.000Z" itemprop="datePublished"> 发表于 2016-04-01</time>
+    <time datetime="2016-04-05T07:06:19.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux安装Gogs"><span class="toc-number">1.</span> <span class="toc-text">Linux安装Gogs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"><span class="toc-number">1.1.</span> <span class="toc-text">安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载git"><span class="toc-number">1.2.</span> <span class="toc-text">下载git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装Gogs"><span class="toc-number">1.3.</span> <span class="toc-text">下载安装Gogs</span></a></li></ol></li></ol>
-		
-		</div>
-		
-		<h1 id="Linux安装Gogs"><a href="#Linux安装Gogs" class="headerlink" title="Linux安装Gogs"></a>Linux安装Gogs</h1><h2 id="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"><a href="#安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）" class="headerlink" title="安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"></a>安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）</h2><ol>
-<li>sudo apt-get install mysql-server </li>
-<li>设置MySQL密码(稍后配置gogs要求输入mysql密码，如果已经设置可跳过)<ul>
-<li>mysql    </li>
-<li>set password for root@localhost = password(‘你的密码’);  </li>
-</ul>
-</li>
-<li>用MySQL创建gogs数据库<br> create database gogs character set utf8 collate utf8_bin;</li>
-</ol>
-<h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><ol>
-<li>sudo apt-get update (先update一下，不然第二步有可能找不到git)</li>
-<li>sudo apt-get install git</li>
-</ol>
-<h2 id="下载安装Gogs"><a href="#下载安装Gogs" class="headerlink" title="下载安装Gogs"></a>下载安装Gogs</h2><ol>
-<li>wget <a href="https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）" target="_blank" rel="external">https://dl.gogs.io/gogs_v0.9.13_linux_amd64.zip（具体看自己Linux系统类型）</a> </li>
-<li>unzip xxxx.zip（刚下载的gogs安装包）</li>
-<li>创建自定义配置文件<ul>
-<li>cd gogs</li>
-<li>mkdir -p custom/conf (配置文件)</li>
-<li>sudo chmod -R 777 custom (修改custom目录权限)</li>
-<li>mkdir log (创建日志目录)</li>
-<li>sudo chmod -R 777 log (修改log文件夹权限)</li>
-</ul>
-</li>
-<li>配置安装好的gogs目录如下<br><img src="http://cl.ly/3O3M0A0T023O/Image%202016-03-30%20at%209.30.03%20%E4%B8%8B%E5%8D%88.png" alt="图片标题"></li>
-<li>可以看到有gogs目录下有一个gogs文件</li>
-<li>运行gogs方式（在gogs目录下）<ul>
-<li>./gogs web</li>
-<li>nohup ./gogs web &amp; (后台运行)</li>
-</ul>
-</li>
-<li>杀死后台gogs进程<ul>
-<li>ps -ef | grep gogs (找到对应的gogs进程id)</li>
-<li>kill xxx(进程id)</li>
-</ul>
-</li>
-</ol>
+		<p>layout: categories(tags)<br>title: categories(tags)</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -172,7 +107,7 @@ set password for root@localhost = password(‘你的密码’);
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://pcwangblog.com/2016/04/01/Linux安装gogs/" data-title="AI" data-tsina="null" class="share clearfix">
+	  <div data-url="http://pcwangblog.com/tags/index.html" data-title="AI" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -183,49 +118,11 @@ set password for root@localhost = password(‘你的密码’);
    	       
 	</article>
 	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2016/04/05/jenkins持续集成/" title="">
-  <strong>上一篇：</strong><br/>
-  <span>
-  (no title)</span>
-</a>
-</div>
-
-
-</nav>
-
 	
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux安装Gogs"><span class="toc-number">1.</span> <span class="toc-text">Linux安装Gogs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）"><span class="toc-number">1.1.</span> <span class="toc-text">安装mysql（如果已经安装可跳过，但必须创建gogs数据库，见以下内容）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载git"><span class="toc-number">1.2.</span> <span class="toc-text">下载git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装Gogs"><span class="toc-number">1.3.</span> <span class="toc-text">下载安装Gogs</span></a></li></ol></li></ol>
- 
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
-  
-
-
-  
-
-  
-
-  
-
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
+        </div>
+        <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -264,7 +161,7 @@ set password for root@localhost = password(‘你的密码’);
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
+        <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 <script src="/js/jquery.qrcode-0.12.0.min.js"></script>
@@ -308,36 +205,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
@@ -460,5 +329,6 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search End -->
 
-  </body>
-</html>
+      </body>
+     </html>
+     

@@ -4,19 +4,21 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>AI</title>
+    <title>Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成 | AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="pcwang">
     
 
     
-    <meta name="description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
+    <meta name="description" content="Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经常闪退。
+通过xcodebuild可以完成iOS工程的编译，打包和签名的过程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI">
+<meta property="og:title" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成">
 <meta property="og:url" content="http://pcwangblog.com/2016/04/05/jenkins持续集成/index.html">
 <meta property="og:site_name" content="AI">
-<meta property="og:description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
+<meta property="og:description" content="Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经常闪退。
+通过xcodebuild可以完成iOS工程的编译，打包和签名的过程">
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/scheme.jpg">
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/profile_name.jpg">
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/Image%202016-04-01%20at%2012.26.30%20上午.png">
@@ -30,10 +32,11 @@
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/94C969EC-47CB-46B7-8C20-A8C4E74462C9.png">
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/C13D01ED-FBAD-4B62-8D42-92741D2B200B.png">
 <meta property="og:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/B91714B4-09B0-4B47-85EF-A4E0F96EA35E.png">
-<meta property="og:updated_time" content="2016-04-05T02:57:54.000Z">
+<meta property="og:updated_time" content="2016-04-05T07:14:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AI">
-<meta name="twitter:description" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经">
+<meta name="twitter:title" content="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成">
+<meta name="twitter:description" content="Xcodebuild在Xcode中，如果要打包成ipa包，是通过[Product -&amp;gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经常闪退。
+通过xcodebuild可以完成iOS工程的编译，打包和签名的过程">
 <meta name="twitter:image" content="http://7xsm7t.com2.z0.glb.clouddn.com/scheme.jpg">
 
     
@@ -94,14 +97,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/05/jenkins持续集成/" title="" itemprop="url"></a>
+      <a href="/2016/04/05/jenkins持续集成/" title="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成" itemprop="url">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="pcwang" target="_blank" itemprop="author">pcwang</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T02:19:56.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
+    <time datetime="2016-04-05T07:08:54.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
     
   </p>
 </header>
@@ -110,11 +113,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><span class="toc-number">1.</span> <span class="toc-text">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">1.3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置工程基本信息"><span class="toc-number">1.3.2.</span> <span class="toc-text">配置工程基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置项目源码Git地址"><span class="toc-number">1.3.3.</span> <span class="toc-text">配置项目源码Git地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Cocoapods"><span class="toc-number">1.3.4.</span> <span class="toc-text">配置Cocoapods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build参数配置"><span class="toc-number">1.3.5.</span> <span class="toc-text">build参数配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书和keychain配置"><span class="toc-number">1.3.6.</span> <span class="toc-text">证书和keychain配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode构建高级配置"><span class="toc-number">1.3.7.</span> <span class="toc-text">Xcode构建高级配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建完上传到fir、蒲公英"><span class="toc-number">1.3.8.</span> <span class="toc-text">构建完上传到fir、蒲公英</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fir通过fir-cli来发布"><span class="toc-number">1.3.8.1.</span> <span class="toc-text">fir通过fir-cli来发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蒲公英通过curl命令上传ipa文件"><span class="toc-number">1.3.8.2.</span> <span class="toc-text">蒲公英通过curl命令上传ipa文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建后步骤"><span class="toc-number">1.3.9.</span> <span class="toc-text">构建后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始构建项目"><span class="toc-number">1.3.10.</span> <span class="toc-text">开始构建项目</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">3.1.</span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置工程基本信息"><span class="toc-number">3.2.</span> <span class="toc-text">配置工程基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置项目源码Git地址"><span class="toc-number">3.3.</span> <span class="toc-text">配置项目源码Git地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Cocoapods"><span class="toc-number">3.4.</span> <span class="toc-text">配置Cocoapods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build参数配置"><span class="toc-number">3.5.</span> <span class="toc-text">build参数配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书和keychain配置"><span class="toc-number">3.6.</span> <span class="toc-text">证书和keychain配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode构建高级配置"><span class="toc-number">3.7.</span> <span class="toc-text">Xcode构建高级配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建完上传到fir、蒲公英"><span class="toc-number">3.8.</span> <span class="toc-text">构建完上传到fir、蒲公英</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fir通过fir-cli来发布"><span class="toc-number">3.8.1.</span> <span class="toc-text">fir通过fir-cli来发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蒲公英通过curl命令上传ipa文件"><span class="toc-number">3.8.2.</span> <span class="toc-text">蒲公英通过curl命令上传ipa文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建后步骤"><span class="toc-number">3.9.</span> <span class="toc-text">构建后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始构建项目"><span class="toc-number">3.10.</span> <span class="toc-text">开始构建项目</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h1 id="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><a href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成" class="headerlink" title="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"></a>Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</h1><h2 id="Xcodebuild"><a href="#Xcodebuild" class="headerlink" title="Xcodebuild"></a>Xcodebuild</h2><p>在Xcode中，如果要打包成ipa包，是通过[Product -&gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经常闪退。</p>
+		<h2 id="Xcodebuild"><a href="#Xcodebuild" class="headerlink" title="Xcodebuild"></a>Xcodebuild</h2><p>在Xcode中，如果要打包成ipa包，是通过[Product -&gt; Archive]，等待整个工程archive后，然后弹出的[Organizer]中进行选择，根据需求导出ad hoc,enterprise等类型的ipa包。Xcode屏蔽了大部分的细节，而且有些人在Archive的时候Xcode经常闪退。</p>
 <p>通过xcodebuild可以完成iOS工程的编译，打包和签名的过程。Archive后，工程是没有进行签名的。export时候才会去签名，签名必须依赖于工程的配置。</p>
 <h3 id="命令打包流程"><a href="#命令打包流程" class="headerlink" title="命令打包流程"></a>命令打包流程</h3><ol>
 <li><p>.xcodeproj工程</p>
@@ -209,6 +212,16 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Jenkins/">Jenkins</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Jenkins/">Jenkins</a>
+  </div>
 
 </div>
 
@@ -216,7 +229,7 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://pcwangblog.com/2016/04/05/jenkins持续集成/" data-title="AI" data-tsina="null" class="share clearfix">
+	  <div data-url="http://pcwangblog.com/2016/04/05/jenkins持续集成/" data-title="Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成 | AI" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -229,11 +242,19 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/04/05/Cocoapods-Spec/" title="Cocoapods/Spec使用教程">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Cocoapods/Spec使用教程</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2016/04/01/Linux安装gogs/"  title="">
+<a href="/2016/04/05/Linux安装gogs/"  title="Linux安装Gogs">
  <strong>下一篇：</strong><br/> 
- <span>(no title)
+ <span>Linux安装Gogs
 </span>
 </a>
 </div>
@@ -248,7 +269,7 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成"><span class="toc-number">1.</span> <span class="toc-text">Jenkins、Git、Cocoapods、Fir、蒲公英构建iOS持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">1.3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">1.3.1.</span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置工程基本信息"><span class="toc-number">1.3.2.</span> <span class="toc-text">配置工程基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置项目源码Git地址"><span class="toc-number">1.3.3.</span> <span class="toc-text">配置项目源码Git地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Cocoapods"><span class="toc-number">1.3.4.</span> <span class="toc-text">配置Cocoapods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build参数配置"><span class="toc-number">1.3.5.</span> <span class="toc-text">build参数配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书和keychain配置"><span class="toc-number">1.3.6.</span> <span class="toc-text">证书和keychain配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode构建高级配置"><span class="toc-number">1.3.7.</span> <span class="toc-text">Xcode构建高级配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建完上传到fir、蒲公英"><span class="toc-number">1.3.8.</span> <span class="toc-text">构建完上传到fir、蒲公英</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fir通过fir-cli来发布"><span class="toc-number">1.3.8.1.</span> <span class="toc-text">fir通过fir-cli来发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蒲公英通过curl命令上传ipa文件"><span class="toc-number">1.3.8.2.</span> <span class="toc-text">蒲公英通过curl命令上传ipa文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建后步骤"><span class="toc-number">1.3.9.</span> <span class="toc-text">构建后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始构建项目"><span class="toc-number">1.3.10.</span> <span class="toc-text">开始构建项目</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcodebuild"><span class="toc-number">1.</span> <span class="toc-text">Xcodebuild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令打包流程"><span class="toc-number">1.1.</span> <span class="toc-text">命令打包流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">1.2.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-number">2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建iOS-CI流程"><span class="toc-number">3.</span> <span class="toc-text">构建iOS-CI流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-number">3.1.</span> <span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置工程基本信息"><span class="toc-number">3.2.</span> <span class="toc-text">配置工程基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置项目源码Git地址"><span class="toc-number">3.3.</span> <span class="toc-text">配置项目源码Git地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Cocoapods"><span class="toc-number">3.4.</span> <span class="toc-text">配置Cocoapods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build参数配置"><span class="toc-number">3.5.</span> <span class="toc-text">build参数配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证书和keychain配置"><span class="toc-number">3.6.</span> <span class="toc-text">证书和keychain配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode构建高级配置"><span class="toc-number">3.7.</span> <span class="toc-text">Xcode构建高级配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建完上传到fir、蒲公英"><span class="toc-number">3.8.</span> <span class="toc-text">构建完上传到fir、蒲公英</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fir通过fir-cli来发布"><span class="toc-number">3.8.1.</span> <span class="toc-text">fir通过fir-cli来发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#蒲公英通过curl命令上传ipa文件"><span class="toc-number">3.8.2.</span> <span class="toc-text">蒲公英通过curl命令上传ipa文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建后步骤"><span class="toc-number">3.9.</span> <span class="toc-text">构建后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始构建项目"><span class="toc-number">3.10.</span> <span class="toc-text">开始构建项目</span></a></li></ol></li></ol>
  
   </div>
 
@@ -260,8 +281,46 @@ open ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist
 
 
   
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Gogs/" title="Gogs">Gogs<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Jenkins/" title="Jenkins">Jenkins<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
 
   
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Jenkins/" title="Jenkins">Jenkins<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Gogs/" title="Gogs">Gogs<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Cocoapods/" title="Cocoapods">Cocoapods<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
 
